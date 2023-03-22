@@ -1,0 +1,15 @@
+C:\Users\BS823\Desktop\DotNet projects\bin\Debug\net6.0\DotNet projects.exe
+C:\Users\BS823\Desktop\DotNet projects\bin\Debug\net6.0\DotNet projects.deps.json
+C:\Users\BS823\Desktop\DotNet projects\bin\Debug\net6.0\DotNet projects.runtimeconfig.json
+C:\Users\BS823\Desktop\DotNet projects\bin\Debug\net6.0\DotNet projects.dll
+C:\Users\BS823\Desktop\DotNet projects\bin\Debug\net6.0\DotNet projects.pdb
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.csproj.AssemblyReference.cache
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.AssemblyInfoInputs.cache
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.AssemblyInfo.cs
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.csproj.CoreCompileInputs.cache
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.dll
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\refint\DotNet projects.dll
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.pdb
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\DotNet projects.genruntimeconfig.cache
+C:\Users\BS823\Desktop\DotNet projects\obj\Debug\net6.0\ref\DotNet projects.dll
