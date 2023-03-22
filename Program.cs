@@ -37,7 +37,7 @@ public class CardHolder
         void deposit(CardHolder currentUser){
             Console.WriteLine("How much money you want to deposit?");
             double deposit = Double.Parse(Console.ReadLine());
-            currentUser.balance = deposit;
+            currentUser.balance += deposit;
             Console.WriteLine("Thank you for depositting.  Your current balance is " + currentUser.balance);
         }
 
@@ -47,8 +47,9 @@ public class CardHolder
             double withdraw = Double.Parse(Console.ReadLine());
 
             if (currentUser.balance >= withdraw){
-                currentUser.balance = withdraw;
-                Console.WriteLine("Thank you for depositting.  Your current balance is " + currentUser.balance);
+                Console.WriteLine(currentUser.balance+ " " + withdraw);
+                currentUser.balance -= withdraw;
+                Console.WriteLine("Thank you for withdrawing.  Your current balance is " + currentUser.balance);
             }else{
 
                 Console.WriteLine("Cant withdraw the amount");
@@ -110,13 +111,33 @@ public class CardHolder
 
                 }
             }catch{
-                
+                Console.WriteLine("Invalid pin");
             }
         }
 
         Console.WriteLine("Welcome " + ch.firstName);
 
+        int option = 0;
+
         
+        do{
+            printOptions();
+            try{
+                option =Int16.Parse(Console.ReadLine()); 
+            }catch{
+                Console.WriteLine("Invalid option");
+                continue;
+            }
+
+            if(option == 1){
+                 deposit(ch);
+            }else if(option == 2){
+                 withDraw(ch);
+            }else if(option == 3){
+                balance(ch);
+            }
+            
+        }while(option != 4);
     }
 
 }
