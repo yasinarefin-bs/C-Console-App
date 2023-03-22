@@ -95,6 +95,27 @@ public class CardHolder
             }
         }
 
+
+        Console.WriteLine("Please enter your pin");
+
+        int userPin= 0;
+
+        while(true){
+            try{
+                userPin = Int32.Parse(Console.ReadLine());
+                if(ch.pin == userPin){
+                    break;
+                }else{
+                    Console.WriteLine("Invalid pin");
+
+                }
+            }catch{
+                
+            }
+        }
+
+        Console.WriteLine("Welcome " + ch.firstName);
+
         
     }
 
