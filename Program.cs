@@ -1,5 +1,9 @@
 ﻿using System;
-
+using System.Data;
+using MySql.Data.MySqlClient;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using Data;
 public class CardHolder
 {
     String cardNum { get; set; }
@@ -22,6 +26,40 @@ public class CardHolder
 
 
     public static void Main(String [] args){
+
+       List<CardHolder> cardHOlders = new List<CardHolder>();
+
+        var dbCon = DBConnection.Instance();
+        dbCon.Server = "127.0.0.1";
+        dbCon.DatabaseName = "console_app_database";
+        dbCon.UserName = "root";
+        dbCon.Password = "";
+        if (dbCon.IsConnect())
+        {
+            //suppose col0 and col1 are defined as VARCHAR in the DB
+            string query = "SELECT * FROM CardHolder";
+            var cmd = new MySqlCommand(query, dbCon.Connection);
+            var reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                
+                string cardNo = reader.GetString(0);
+                int pin = reader.GetInt32(1);
+
+
+                cardHOlders.Add(new CardHolder(
+                    cardNo,
+                     pin,
+                      reader.GetString(2), 
+                      reader.GetString(3),
+                       reader.GetDouble(4)
+                ));
+               // Console.WriteLine(cardNo + "," + pin);
+            }
+            dbCon.Close();
+        }
+
+
         void printOptions(){
             Console.WriteLine("Hello");
             Console.WriteLine("Welcome to pingpong ATM machine");
@@ -61,13 +99,13 @@ public class CardHolder
             Console.WriteLine("Current balance for user " + currentUser.firstName + " " + currentUser.balance);
         }
 
-        List<CardHolder> cardHOlders = new List<CardHolder>();
+        
 
-        cardHOlders.Add(new CardHolder("1", 1, "A", "B", 10));
-        cardHOlders.Add(new CardHolder("2", 2, "AB", "B", 20));
-        cardHOlders.Add(new CardHolder("3", 3, "AC", "B", 10.64));
-        cardHOlders.Add(new CardHolder("4", 4, "AD", "B", 5));
-        cardHOlders.Add(new CardHolder("5", 5, "AZ", "B", 7));
+        // cardHOlders.Add(new CardHolder("1", 1, "A", "B", 10));
+        // cardHOlders.Add(new CardHolder("2", 2, "AB", "B", 20));
+        // cardHOlders.Add(new CardHolder("3", 3, "AC", "B", 10.64));
+        // cardHOlders.Add(new CardHolder("4", 4, "AD", "B", 5));
+        // cardHOlders.Add(new CardHolder("5", 5, "AZ", "B", 7));
         
 
 
